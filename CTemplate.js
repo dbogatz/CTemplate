@@ -58,7 +58,7 @@ var CTemplate = (function() {
         sVirtualFunction+= "this.process=function(__CONTEXT__){if(__CONTEXT__._MODIFIERS!=null){for(var key in __CONTEXT__._MODIFIERS)__M__[key]=__CONTEXT__._MODIFIERS[key]};with(__CONTEXT__){\nvar __TMPL__='';__TMPL__+='<ESCAPE>"+tpl+"</ESCAPE>';\nreturn __TMPL__;}}";
 
         //  Strings escapen
-        sVirtualFunction=sVirtualFunction.replace(/(\<ESCAPE\>)([\s\S]*?)(\<\/ESCAPE\>)/g,function(){return arguments[2].replace(/(['\\])/g,'\\$1').replace(/\n/g,'\\n')});
+        sVirtualFunction=sVirtualFunction.replace(/(\<ESCAPE\>)([\s\S]*?)(\<\/ESCAPE\>)/g,function(){return arguments[2].replace(/(['\\])/g,'\\$1').replace(/\r?\n/g,'\\n')});
 
         //  Als neue Instanz zurückliefern
         try {
